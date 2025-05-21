@@ -32,7 +32,7 @@ class ComandLineArgsHandler {
   _processArgs(parsedArgs) {
     let result = CountryRepository.dataList;
     this.argsHandler.forEach((value, key) => {
-      parsedArgs.entries().forEach(([argKey, argValue]) => {
+      Array.from(parsedArgs.entries()).forEach(([argKey, argValue]) => {
         if (argKey === key) {
           const [options, processor] = value;
           if (options.needValue) {
